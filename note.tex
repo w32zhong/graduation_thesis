@@ -1,0 +1,32 @@
+\documentclass[]{article}
+\usepackage{xeCJK}
+\setCJKmainfont{WenQuanYi Zen Hei Sharp}
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\LARGE 毕业设计理论笔记\\
+[2.5cm]
+\large{钟\ 威}
+\vfill
+\large 最后更改时间：\today
+\end{center}
+\end{titlepage}
+
+\section{凸规划问题基础}
+
+\subsection{凸集} 
+($P_{17}$ 定义 1.2.1) 
+\quad 称S是凸集，如果对于任意的$x_1,x_2 \in S$和任意的$\lambda \in [0,1]$,都有：
+$$ {\lambda}x_1 + (1 - {\lambda})x_2 \in S $$
+
+\subsection{凸函数}
+($P_{17}$ 定义 1.2.3)
+\quad 任意的$ x_1,x_2 \in S $和任意的$ \lambda \in (0,1)$,都有：
+$$ f({\lambda}x_1 + (1 - \lambda)x_2) \le {\lambda}f(x_1) + (1 - \lambda)f(x_2)$$
+
+\subsection{凸函数的充要条件}
+($P_{19}$ 定义 1.2.4)
+\quad $f(x)$是凸函数的充要条件是：对于S中的任意一点$\bar{x}$，都有：
+$$ f(x) \ge f(\bar{x}) + \nabla f(\bar{x})^T(x-\bar{x}) $$
+\end{document}
