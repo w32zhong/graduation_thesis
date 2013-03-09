@@ -6,10 +6,12 @@
 \begin{titlepage}
 \begin{center}
 \LARGE 毕业设计理论笔记\\
-[2.5cm]
+[1.5cm]
 \large{钟\ 威}
 \vfill
-\large 最后更改时间：\today
+\large 理论书籍目前看到：$P_{19}$ \\
+[0.5cm]
+\large 最后更改时间：\today \\
 \end{center}
 \end{titlepage}
 
@@ -17,16 +19,42 @@
 
 \subsection{凸集} 
 ($P_{17}$ 定义 1.2.1) 
-\quad 称S是凸集，如果对于任意的$x_1,x_2 \in S$和任意的$\lambda \in [0,1]$,都有：
-$$ {\lambda}x_1 + (1 - {\lambda})x_2 \in S $$
+\quad 
+称S是凸集，如果对于任意的$x_1,x_2 \in S$和任意的$\lambda \in [0,1]$,都有：
+$$ 
+{\lambda}x_1 + (1 - {\lambda})x_2 \in S 
+\eqno{(1.2.1)} $$
 
 \subsection{凸函数}
 ($P_{17}$ 定义 1.2.3)
-\quad 任意的$ x_1,x_2 \in S $和任意的$ \lambda \in (0,1)$,都有：
-$$ f({\lambda}x_1 + (1 - \lambda)x_2) \le {\lambda}f(x_1) + (1 - \lambda)f(x_2)$$
+\quad 
+任意的$ x_1,x_2 \in S $和任意的$ \lambda \in (0,1)$,都有：
+$$ 
+f({\lambda}x_1 + (1 - \lambda)x_2) \le {\lambda}f(x_1) + (1 - \lambda)f(x_2) 
+\eqno{(1.2.2)} $$
 
 \subsection{凸函数的充要条件}
-($P_{19}$ 定义 1.2.4)
-\quad $f(x)$是凸函数的充要条件是：对于S中的任意一点$\bar{x}$，都有：
-$$ f(x) \ge f(\bar{x}) + \nabla f(\bar{x})^T(x-\bar{x}) $$
+($P_{19}$ 定理 1.2.4)
+\quad 
+$f(x)$是凸函数的充要条件是：对于S中的任意一点$\bar{x}$，都有：
+$$ 
+f(x) \ge f(\bar{x}) + \nabla f(\bar{x})^T(x-\bar{x})
+\eqno{(1.2.6)} $$
+
+\subsection{凸规划问题}
+($P_{20}$ 定义 1.2.6)
+$$
+\min \qquad f_0(x), \ x \in R^n 
+\eqno{(1.2.10)} $$
+$$
+s.t. \qquad f_i(x) \le 0, \ i = 1, \ldots , m 
+\eqno{(1.2.11)} $$
+
+\begin{eqnarray}
+\label{1.2.3}
+asd&f = asf \\
+\label{1.2.3}
+fwer&gge = adf
+\end{eqnarray}
+
 \end{document}
