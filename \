@@ -119,21 +119,8 @@ $$
 \eqno{(1.2.48)} $$
 满足：
 \begin{align*}
-\tag{1.2.49}
-f_i(x^*) &\le 0, \qquad i=1, \ldots, m \\
-\tag{1.2.50}
-h_i(x^*) &= 0, \qquad i=1, \ldots, p \\
-\tag{1.2.51}
-{\lambda}_i^* &\ge 0, \qquad i=1, \ldots, m \\
-\tag{1.2.52}
-{\lambda}^*_i f_i(x^*) &= 0, \qquad i=1, \ldots, m \\
-\tag{1.2.53}
-\nabla_x \mathbf{L}(x^*, \lambda^*, \nu^*) &= \nabla f_0(x^*) + \sum_{i=1}^{m}\lambda^*_i \nabla f_i(x^*) + \sum_{i=1}^p \nu_i^* \nabla h_i(x^*) = 0
+\tag{1.2.47}
+f_i(x^*) &\le 0, \qquad i=1, \ldots, m 
 \end{align*}
-
-\bigskip
-利用强对偶定理可以证明KKT条件是凸规划解的必要条件：
-\subsection*{$P_{25}$ 定理1.2.23 }
-考虑凸规划问题(1.2.10)$\to$(1.2.12)，并设它满足Slater条件。若$x^*$是该问题的解，则$x^*$满足KKT条件。
 
 \end{document}
