@@ -87,7 +87,7 @@ $$
 \tag{1.2.40}
 \max \qquad & g(\lambda, \nu) = \inf_{x \in R^n}\mathbf{L}(x, \lambda, \nu) \\
 \tag{1.2.41}
-s.t. \qquad & \lambda \le 0
+s.t. \qquad & \lambda \ge 0
 \end{align*}
 
 称为问题(1.2.10)$\to$(1.2.12)关于Lagrange函数(1.2.35)的对偶问题，或简称为问题(1.2.10)$\to$(1.2.12)的对偶问题。称(1.2.10)$\to$(1.2.12)为原始问题。
@@ -131,9 +131,49 @@ h_i(x^*) &= 0, \qquad i=1, \ldots, p \\
 \nabla_x \mathbf{L}(x^*, \lambda^*, \nu^*) &= \nabla f_0(x^*) + \sum_{i=1}^{m}\lambda^*_i \nabla f_i(x^*) + \sum_{i=1}^p \nu_i^* \nabla h_i(x^*) = 0
 \end{align*}
 
-\bigskip
+\vspace{12mm}
 利用强对偶定理可以证明KKT条件是凸规划解的必要条件：
 \subsection*{$P_{25}$ 定理1.2.23 }
 考虑凸规划问题(1.2.10)$\to$(1.2.12)，并设它满足Slater条件。若$x^*$是该问题的解，则$x^*$满足KKT条件。
+
+\vspace{12mm}
+下列定理表明KKT条件不仅是凸规划解的必要条件，而且也是充分条件。
+\subsection*{$P_{26}$ 定理1.2.24 }
+考虑凸规划问题(1.2.10)$\to$(1.2.12)，若$x^*$满足KKT条件，则$x^*$是该问题的解。
+
+\vspace{12mm}
+综合上面两个定理，有：
+\subsection*{$P_{27}$ 定理1.2.25}
+对于满足Slater条件的凸规划问题(1.2.10)$\to$(1.2.12)，点$x^*$是解的充分必要条件是它满足KKT条件。
+\newpage
+
+\subsection*{$P_{27}$ 线性规划问题}
+\begin{align*}
+\tag{1.2.57}
+\min \qquad & c^Tx, \quad x \in \mathbf{R}^n \\
+\tag{1.2.58}
+s.t. \qquad & \bar{A}x - \bar{b} \le 0 \\
+\tag{1.2.59}
+& Ax - b = 0 \\
+\end{align*}
+线性问题对应的Lagrange函数应为：
+$$
+\mathbf{L}(x, \lambda, \nu) = c^T x + \lambda^T (\bar{A} x - \bar{b}) + \nu^T(Ax - b)
+\eqno{(1.2.60)} $$
+
+\subsection*{$P_{27}$ 定理1.2.26 }
+线性规划问题(1.2.57)$\to$(1.2.59)的对偶问题是：
+\begin{align*}
+\tag{1.2.61}
+\max \qquad & -\bar{b}^T\lambda - b^T \nu \\
+\tag{1.2.62}
+s.t. \qquad & \bar{A}^T\lambda + A^T \nu + c = 0 \\
+\tag{1.2.63}
+& \lambda \ge 0
+\end{align*}
+
+\section*{线性分类机}
+
+\subsection*{$P_{56}$ 分类问题 }
 
 \end{document}
