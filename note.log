@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.4)  13 MAR 2013 23:51
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.5)  14 MAR 2013 05:25
 entering extended mode
  %&-line parsing enabled.
 **note.tex
@@ -261,7 +261,7 @@ landscape: --
 twocolumn: --
 twoside: --
 asymmetric: --
-h-parts: 90.3375pt, 437.23373pt, 86.72377pt
+h-parts: 97.56493pt, 422.77885pt, 93.95122pt
 v-parts: 68.65627pt, 657.65746pt, 68.65627pt
 hmarginratio: --
 vmarginratio: --
@@ -276,10 +276,10 @@ driver: pdftex
 -------------------- Page layout dimensions and switches
 \paperwidth  614.295pt
 \paperheight 794.96999pt
-\textwidth  437.23373pt
+\textwidth  422.77885pt
 \textheight 657.65746pt
-\oddsidemargin  18.0675pt
-\evensidemargin 18.0675pt
+\oddsidemargin  25.29494pt
+\evensidemargin 25.29494pt
 \topmargin  -40.61372pt
 \headheight 12.0pt
 \headsep    25.0pt
@@ -301,7 +301,7 @@ LaTeX Font Info:    Font shape `EU1/WenQuanYiZenHeiSharp(0)/bx/n' undefined
 (Font)              using `EU1/WenQuanYiZenHeiSharp(0)/m/n' instead on input li
 ne 19.
  [1]
-Overfull \hbox (19.17513pt too wide) in paragraph at lines 93--94
+Overfull \hbox (33.63pt too wide) in paragraph at lines 93--94
 []\rm/m/n/10 称 为 问 题 \EU1/lmr/m/n/10 (1.2.10)$\OMS/cmsy/m/n/10 !$\EU1/l
 mr/m/n/10 (1.2.12) \rm/m/n/10 关 于 \EU1/lmr/m/n/10 Lagrange \rm/m/n/10 函 �
 �� \EU1/lmr/m/n/10 (1.2.35) \rm/m/n/10 的 对 偶 问 题，| 或 简 称 为 
@@ -314,7 +314,7 @@ LaTeX Font Info:    Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  3482 strings out of 495724
  62166 string characters out of 1189347
- 159669 words of memory out of 3000000
+ 159670 words of memory out of 3000000
  6583 multiletter control sequences out of 15000+50000
  7664 words of font info for 48 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191

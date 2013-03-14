@@ -2,7 +2,7 @@
 \usepackage{xeCJK}
 \setCJKmainfont{WenQuanYi Zen Hei Sharp}
 \usepackage{amsmath} %可以使用align
-\usepackage[top=0.95in,bottom=0.95in,left=1.25in,right=1.2in]{geometry} %页边距
+\usepackage[top=0.95in,bottom=0.95in,left=1.35in,right=1.3in]{geometry} %页边距
 
 \begin{document}
 
@@ -175,5 +175,36 @@ s.t. \qquad & \bar{A}^T\lambda + A^T \nu + c = 0 \\
 \section*{线性分类机}
 
 \subsection*{$P_{56}$ 分类问题 }
+给定训练集
+$$
+T = \{(x_1, y_1), \ldots, (x_i, y_i)\} \in (R^n \times \mathcal{Y})^l
+\eqno{(2.1.5)} $$
+其中$x_i \in R^n, y_i \in \mathcal{Y} = \{1, -1\}, i = 1, \ldots, l $，寻找$R^n$空间上的一个实值函数g(x)，以便用决策函数
+$$
+f(x) = sgn(g(x))
+\eqno{(2.1.6)} $$
+推断任意输入$x$对应的输出$y$。
+
+\subsection*{$P_{57}$ 线性可分问题 }
+略
+
+\subsection*{$P_{59}$ 通过最大间隔法将分类问题等价为 }
+\begin{align*}
+\tag{2.2.3}
+\max_{\omega, b} \qquad & \frac{2}{\| \omega \|} \\
+\tag{2.2.4}
+s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \dot x_i) + b \ge 1 \\
+\tag{2.2.5}
+& \forall i \in \{i| y_i = -1\}: (\omega \dot x_i) + b \le -1 \\
+\end{align*}
+或者：
+\begin{align*}
+\tag{2.2.6}
+\min_{\omega, b} \qquad & \frac{2}{\| \omega \|} \\
+\tag{2.2.4}
+s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \dot x_i) + b \ge 1 \\
+\tag{2.2.5}
+& \forall i \in \{i| y_i = -1\}: (\omega \dot x_i) + b \le -1 \\
+\end{align*}
 
 \end{document}
