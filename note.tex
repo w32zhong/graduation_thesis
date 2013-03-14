@@ -188,23 +188,23 @@ f(x) = sgn(g(x))
 \subsection*{$P_{57}$ 线性可分问题 }
 略
 
-\subsection*{$P_{59}$ 通过最大间隔法将分类问题等价为 }
+\subsection*{$P_{59}$ 通过最大间隔法将分类问题转化为 }
 \begin{align*}
 \tag{2.2.3}
 \max_{\omega, b} \qquad & \frac{2}{\| \omega \|} \\
 \tag{2.2.4}
-s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \dot x_i) + b \ge 1 \\
+s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \cdot x_i) + b \ge 1 \\
 \tag{2.2.5}
-& \forall i \in \{i| y_i = -1\}: (\omega \dot x_i) + b \le -1 \\
+& \forall i \in \{i| y_i = -1\}: (\omega \cdot x_i) + b \le -1 \\
 \end{align*}
 或者：
 \begin{align*}
-\tag{2.2.6}
-\min_{\omega, b} \qquad & \frac{2}{\| \omega \|} \\
-\tag{2.2.4}
-s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \dot x_i) + b \ge 1 \\
-\tag{2.2.5}
-& \forall i \in \{i| y_i = -1\}: (\omega \dot x_i) + b \le -1 \\
+\tag{2.2.8}
+\min_{\omega, b} \qquad & \frac{1}{2}{\| \omega \|} \\
+\tag{2.2.9}
+s.t. \qquad & y_i((\omega \cdot x_i) + b) \ge 1, \qquad i=1, \ldots, l \\
 \end{align*}
+
+通过求解(2.2.8)$\to$(2.2.9)的对偶问题而寻求它的解。引入Lagrange函数：
 
 \end{document}
