@@ -206,5 +206,25 @@ s.t. \qquad & y_i((\omega \cdot x_i) + b) \ge 1, \qquad i=1, \ldots, l \\
 \end{align*}
 
 通过求解(2.2.8)$\to$(2.2.9)的对偶问题而寻求它的解。引入Lagrange函数：
+$$
+\mathbf{L}(\omega, b, \alpha) = \frac{1}{2}{\| \omega \|}^2 + \sum_{i = 1}^{l}{\alpha}_i (y_i((\omega \cdot x_i) + b) - 1)
+\eqno{(2.2.26)} $$
+根据定义1.2.16给出的对偶问题应该为：
+\begin{align*}
+\tag{2.2.30}
+\max \qquad & g(\alpha) = \inf_{\omega, b} \mathbf{L}(\omega, b, \alpha) \\
+\tag{2.2.31}
+s.t. \qquad & \alpha \ge 0
+\end{align*}
+由于$\mathbf{L}(\omega, b, \alpha)$是$\omega$的严格凸二次函数，它去最小值时：
+$$
+\nabla_\omega \mathbf{L}(\omega, b, \alpha) = \omega - \sum_{i=1}^l y_ix_i\alpha_i = 0
+\eqno{(2.2.32)} $$
+即
+$$
+\omega = \sum_{i=1}^l \alpha_i y_i x_i
+\eqno{(2.2.33)} $$
+代入式(2.2.26)：
+%\inf_{\omega, b} \mathbf{L}(\omega, b, \alpha) = 
 
 \end{document}
