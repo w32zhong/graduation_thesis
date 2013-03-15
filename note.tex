@@ -228,10 +228,23 @@ $$
 代入式(2.2.26)：
 $$
 \inf_{\omega, b} \mathbf{L}(\omega, b, \alpha) = 
- \begin{array}{ll}
-- \frac{1}{2} \sum_{i=1}^{l} \sum_{j=1}^{l} y_i y_j \alpha_i \alpha_j (x_i \cdot x_j) + \sum_{j=1}^l \alpha_j, & \qquad when \sum_{i=1}^l y_i \alpha_i = 0 \\
--\infty & \qquad else
+\left \{ \begin{array}{ll}
+- \frac{1}{2} \sum\limits_{i=1}^{l} \sum\limits_{j=1}^{l} y_i y_j \alpha_i \alpha_j (x_i \cdot x_j) + \sum\limits_{j=1}^l \alpha_j, & when \sum\limits_{i=1}^l y_i \alpha_i = 0 \\
+[5mm]
+-\infty & else
 \end{array}
-$$
+\right.
+\eqno{(2.2.35)} $$
+
+故最优化问题：
+\begin{align*}
+\tag{2.2.27}
+\max_\alpha \qquad & - \frac{1}{2} \sum_{i=1}^l \sum_{j=1}^l y_i y_j (x_i \cdot x_j) \alpha_i \alpha_j + \sum_{j=1}^l \alpha_j \\
+\tag{2.2.28}
+s.t. \qquad & \sum_{i=1}^l y_i \alpha_i = 0 \\
+\tag{2.2.29}
+\qquad & \alpha_i \ge 0, \quad i= 1, \ldots, l
+\end{align*}
+是原始问题(2.2.8)$\to$(2.2.9)的对偶问题。
 
 \end{document}
