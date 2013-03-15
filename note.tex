@@ -205,6 +205,7 @@ s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \cdot x_i) + b \ge 1 \\
 s.t. \qquad & y_i((\omega \cdot x_i) + b) \ge 1, \qquad i=1, \ldots, l \\
 \end{align*}
 
+\subsection*{$P_{62}$ 分类问题的对偶问题 }
 通过求解(2.2.8)$\to$(2.2.9)的对偶问题而寻求它的解。引入Lagrange函数：
 $$
 \mathbf{L}(\omega, b, \alpha) = \frac{1}{2}{\| \omega \|}^2 + \sum_{i = 1}^{l}{\alpha}_i (y_i((\omega \cdot x_i) + b) - 1)
@@ -225,6 +226,12 @@ $$
 \omega = \sum_{i=1}^l \alpha_i y_i x_i
 \eqno{(2.2.33)} $$
 代入式(2.2.26)：
-%\inf_{\omega, b} \mathbf{L}(\omega, b, \alpha) = 
+$$
+\inf_{\omega, b} \mathbf{L}(\omega, b, \alpha) = 
+ \begin{array}{ll}
+- \frac{1}{2} \sum_{i=1}^{l} \sum_{j=1}^{l} y_i y_j \alpha_i \alpha_j (x_i \cdot x_j) + \sum_{j=1}^l \alpha_j, & \qquad when \sum_{i=1}^l y_i \alpha_i = 0 \\
+-\infty & \qquad else
+\end{array}
+$$
 
 \end{document}
