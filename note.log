@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.5)  17 MAR 2013 23:26
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.5)  18 MAR 2013 03:03
 entering extended mode
  %&-line parsing enabled.
 **note.tex
@@ -300,15 +300,7 @@ driver: pdftex
 LaTeX Font Info:    Font shape `EU1/WenQuanYiZenHeiSharp(0)/bx/n' undefined
 (Font)              using `EU1/WenQuanYiZenHeiSharp(0)/m/n' instead on input li
 ne 21.
- [1]
-Overfull \hbox (33.63pt too wide) in paragraph at lines 95--96
-[]\rm/m/n/10 称 为 问 题 \EU1/lmr/m/n/10 (1.2.10)$\OMS/cmsy/m/n/10 !$\EU1/l
-mr/m/n/10 (1.2.12) \rm/m/n/10 关 于 \EU1/lmr/m/n/10 Lagrange \rm/m/n/10 函 �
-�� \EU1/lmr/m/n/10 (1.2.35) \rm/m/n/10 的 对 偶 问 题，| 或 简 称 为 
-问 题 \EU1/lmr/m/n/10 (1.2.10)$\OMS/cmsy/m/n/10 !$\EU1/lmr/m/n/10 (1.2.12)
- []
-
-[2] [3] [4] [5] [6] (./note.aux)
+ [1] [2] [3] [4] [5] [6] (./note.aux)
 LaTeX Font Info:    Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
