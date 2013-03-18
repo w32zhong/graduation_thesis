@@ -38,6 +38,7 @@ f(x) \ge f(\bar{x}) + \nabla f(\bar{x})^T(x-\bar{x})
 \eqno{(1.2.6)} $$
 
 \subsection*{$P_{20}$ 定义 1.2.6}
+凸规划问题是指最优化问题：
 \begin{align*}
 \tag{1.2.10}
 \min \qquad & f_0(x), \ x \in R^n \\
@@ -82,7 +83,7 @@ $$
 \mathbf{L}(x, \lambda, \nu) = f_0(x) + \sum_{i = 1}^{m}{\lambda}_if_i(x) + \sum_{i = 1}^{p}{\nu}_ih_i(x)
 \eqno{(1.2.35)} $$
 其中$\lambda = ({\lambda}_1, \ldots, {\lambda}_m)^T$和$\nu = ({\nu}_1, \ldots, {\nu}_m)^T$是Lagrange乘子向量。
-由书上$P_{23}$的论述可知，在$\lambda \le 0$时：$$\inf_{x \in R^n}\mathbf{L}(x, \lambda, \nu)$$
+由书上$P_{23}$的论述可知，在$\lambda \ge 0$时：$$\inf_{x \in R^n}\mathbf{L}(x, \lambda, \nu)$$
 是$f_0(x)$的下界。
 对于要找到最好的下界的问题，我们把：
 \begin{align*}
@@ -92,7 +93,7 @@ $$
 s.t. \qquad & \lambda \ge 0
 \end{align*}
 
-称为问题(1.2.10)$\to$(1.2.12)关于Lagrange函数(1.2.35)的对偶问题，或简称为问题(1.2.10)$\to$(1.2.12)的对偶问题。称(1.2.10)$\to$(1.2.12)为原始问题。
+称(1.2.40)$\to$(1.2.41)为问题(1.2.10)$\to$(1.2.12)关于Lagrange函数(1.2.35)的对偶问题，或简称为问题(1.2.10)$\to$(1.2.12)的对偶问题。称(1.2.10)$\to$(1.2.12)为原始问题。
 
 \subsection*{$P_{24}$ 定义 1.2.17 对偶间隙}
 称原始问题的最优值与对偶问题的最优值之差为原始问题的对偶间隙。
@@ -105,7 +106,7 @@ f_i(x) < 0, \ i=1, \ldots, m; \ {a_i^T}x - b_i = 0, \  i = 1, \ldots, p
 特别地，当凸规划问题的前$k$个不等式约束为线性约束：$f_i(x) = {a_i^T}x - b_i \le 0, \ i = 1, \ldots, k$时，条件可进一步宽松为书上(1.2.45)$\to$(1.2.46)。
 
 \subsection*{$P_{25}$ 定理 1.2.21 强对偶定理}
-对于凸规划问题(1.2.10)$\to$(1.2.12)，若它满足Slater条件，则他的对偶间隙为零。进一步，若还知原始问题的最优值可以达到，即存在最优解$x^*$，则对偶问题的最优值也可以达到，即存在对偶问题的整体解$({\lambda}^*, {\nu}^*)$使得：
+对于凸规划问题(1.2.10)$\to$(1.2.12)，若它满足Slater条件，则它的对偶间隙为零。进一步，若还知原始问题的最优值可以达到，即存在最优解$x^*$，则对偶问题的最优值也可以达到，即存在对偶问题的整体解$({\lambda}^*, {\nu}^*)$使得：
 \begin{align*}
 f_0(x^*) &= \inf{f_0(x)} \\ 
 &= \sup\{g({\lambda}, {\nu})|\lambda \le 0\} \\
@@ -219,7 +220,7 @@ $$
 \tag{2.2.31}
 s.t. \qquad & \alpha \ge 0
 \end{align*}
-由于$\mathbf{L}(\omega, b, \alpha)$是$\omega$的严格凸二次函数，它去最小值时：
+由于$\mathbf{L}(\omega, b, \alpha)$是$\omega$的严格凸二次函数，它取最小值时：
 $$
 \nabla_\omega \mathbf{L}(\omega, b, \alpha) = \omega - \sum_{i=1}^l y_ix_i\alpha_i = 0
 \eqno{(2.2.32)} $$
