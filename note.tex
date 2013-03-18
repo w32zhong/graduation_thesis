@@ -8,6 +8,8 @@
 
 \begin{titlepage}
 \begin{center}
+\ %一个空格以后再用vfill才有效果
+\vfill
 \LARGE 毕业设计理论笔记\\
 [1.5cm]
 \large{钟\ 威}
@@ -246,5 +248,65 @@ s.t. \qquad & \sum_{i=1}^l y_i \alpha_i = 0 \\
 \qquad & \alpha_i \ge 0, \quad i= 1, \ldots, l
 \end{align*}
 是原始问题(2.2.8)$\to$(2.2.9)的对偶问题。
+在最优化方法的研究中常用等价的最小化问题取代最大化问题，这里也引进与上述问题有相同解集的最小化问题：
+\begin{align*}
+\tag{2.2.36}
+\min_\alpha \qquad & \frac{1}{2} \sum_{i=1}^l \sum_{j=1}^l y_i y_j (x_i \cdot x_j) \alpha_i \alpha_j - \sum_{j=1}^l \alpha_j \\
+\tag{2.2.37}
+s.t. \qquad & \sum_{i=1}^l y_i \alpha_i = 0 \\
+\tag{2.2.38}
+\qquad & \alpha_i \ge 0, \quad i= 1, \ldots, l
+\end{align*}
+
+\subsection*{$P_{63}$ 定理 2.2.7 }
+考虑线性可分问题，则对偶问题(2.2.27)$\to$(2.2.29)必有解$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$。
+
+\subsection*{$P_{63}$ 定理 2.2.8 }
+最优化问题(2.2.36)$\to$(2.2.38)是凸二次规划。
+
+\subsection*{$P_{63}$ 定理 2.2.9 }
+若$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$是问题(2.2.36)$\to$(2.2.38)的任意解，则原始问题(2.2.8)$\to$(2.2.9)的唯一解是：
+\begin{align*}
+\tag{2.2.43}
+\omega^* &= \sum_{i=1}^l \alpha^*_i y_i x_i \\
+\tag{2.2.44}
+b^* &= y_j - \sum_{i=1}^l \alpha^*_i y_i (x_i \cdot x_j)
+\end{align*}
+或者
+\begin{align*}
+\tag{2.2.45}
+\omega^* &= \sum_{i=1}^l \alpha^*_i y_i x_i \\
+\tag{2.2.46}
+b^* &= - \frac{\left( \omega^* \cdot \sum\limits_{i=1}^{l} \alpha_i^* x_i \right)}{2 \sum\limits_{y_i=1}\alpha_i^*}
+\end{align*}
+
+\subsection*{$P_{65}$ 算法 2.2.10 线性可分支持向量分类机}
+\subsubsection*{(1)}
+给定训练集合$T = \{(x_1, y_1), \ldots, (x_i, y_i)\} \in (R^n \times \mathcal{Y})^l$ 
+\subsubsection*{(2)}
+构造并求解凸二次规划问题：
+\begin{align*}
+\tag{2.2.57}
+\min_\alpha \qquad & \frac{1}{2} \sum_{i=1}^l \sum_{j=1}^l y_i y_j (x_i \cdot x_j) \alpha_i \alpha_j - \sum_{j=1}^l \alpha_j \\
+\tag{2.2.58}
+s.t. \qquad & \sum_{i=1}^l y_i \alpha_i = 0 \\
+\tag{2.2.59}
+\qquad & \alpha_i \ge 0, \quad i= 1, \ldots, l
+\end{align*}
+得到解$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$
+\subsubsection*{(3)}
+计算$ \omega^* = \sum_{i=1}^l \alpha^*_i y_i x_i $，选取$\alpha^*$的一个正分量$\alpha_j^*$，据此计算：
+$$
+b^* = y_j - \sum_{i=1}^l \alpha^*_i y_i (x_i \cdot x_j)
+\eqno{(2.2.60)} $$
+\subsubsection*{(4)}
+构造分划超平面$ (\omega* \cdot x) + b^* = 0$，由此求得决策函数：
+$$
+f(x) = sgn(g(x))
+\eqno{(2.2.61)} $$
+其中，
+$$
+g(x) = (\omega* \cdot x) + b^* = \sum_{i=1}^l y_i \alpha_i^* (x_i \cdot x) + b^*
+\eqno{(2.2.62)} $$
 
 \end{document}
