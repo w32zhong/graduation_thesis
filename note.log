@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.5)  18 MAR 2013 03:03
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.5)  19 MAR 2013 22:20
 entering extended mode
  %&-line parsing enabled.
 **note.tex
@@ -300,7 +300,7 @@ driver: pdftex
 LaTeX Font Info:    Font shape `EU1/WenQuanYiZenHeiSharp(0)/bx/n' undefined
 (Font)              using `EU1/WenQuanYiZenHeiSharp(0)/m/n' instead on input li
 ne 21.
- [1] [2] [3] [4] [5] [6] (./note.aux)
+ [1] [2] [3] [4] [5] [6] [7] (./note.aux)
 LaTeX Font Info:    Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
@@ -312,4 +312,4 @@ Here is how much of TeX's memory you used:
  28 hyphenation exceptions out of 8191
  34i,10n,34p,477b,146s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on note.pdf (7 pages).
+Output written on note.pdf (8 pages).

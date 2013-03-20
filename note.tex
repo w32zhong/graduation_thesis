@@ -259,6 +259,26 @@ s.t. \qquad & \sum_{i=1}^l y_i \alpha_i = 0 \\
 \qquad & \alpha_i \ge 0, \quad i= 1, \ldots, l
 \end{align*}
 
+该问题的矩阵形式可以表示为：
+\begin{align*}
+\tag{2.2.40}
+\min_\alpha & \qquad W(\alpha) = \frac{1}{2} \alpha^T H \alpha - e^T \alpha \\
+\tag{2.2.41}
+s.t. & \qquad \alpha^T y = 0 \\
+\tag{2.2.42}
+& \qquad \alpha \ge 0
+\end{align*}
+其中：
+\begin{align*}
+H &= (y_i y_j (x_i \cdot x_j))_{l \times l} \\
+e &= (1, \ldots, 1)^T \\
+\alpha &= (\alpha_1, \ldots, \alpha_l)^T \\
+\tag{2.2.39}
+y &= (y_1, \ldots, y_l)^T
+\end{align*}
+因为存在可逆矩阵$Q = (y_1x_1, \ldots, y_lx_l)$使得$H = Q^T Q$，所以$H$是半正定矩阵。
+由于该问题满足Slater条件，由定理1.2.23知，对于问题的解$\alpha^*$来说，存在Lagrange乘子向量$\bar{b^*}$和乘子
+
 \subsection*{$P_{63}$ 定理 2.2.7 }
 考虑线性可分问题，则对偶问题(2.2.27)$\to$(2.2.29)必有解$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$。
 
