@@ -277,7 +277,20 @@ e &= (1, \ldots, 1)^T \\
 y &= (y_1, \ldots, y_l)^T
 \end{align*}
 因为存在可逆矩阵$Q = (y_1x_1, \ldots, y_lx_l)$使得$H = Q^T Q$，所以$H$是半正定矩阵。
-由于该问题满足Slater条件，由定理1.2.23知，对于问题的解$\alpha^*$来说，存在Lagrange乘子向量$\bar{b^*}$和乘子
+由于该问题满足Slater条件，由定理1.2.23知，对于问题的解$\alpha^*$来说，存在Lagrange乘子向量$\tilde{b^*}$和$s^*$满足：
+$$
+{\alpha^*}^T y = 0, \qquad \alpha^* \ge 0 
+\eqno{(2.2.47)} $$
+$$
+s^* \ge 0, \qquad {s^*}^T \alpha^* = 0
+\eqno{(2.2.48)} $$
+$$
+H \alpha^* - e + \tilde{b^*} y - s^* = 0
+\eqno{(2.2.49)} $$
+由式(2.2.48)和(2.2.49)可知：
+$$
+H \alpha^* - e + \tilde{b^*} y \ge 0
+\eqno{(2.2.50)} $$
 
 \subsection*{$P_{63}$ 定理 2.2.7 }
 考虑线性可分问题，则对偶问题(2.2.27)$\to$(2.2.29)必有解$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$。
