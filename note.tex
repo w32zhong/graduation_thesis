@@ -98,6 +98,19 @@ s.t. \qquad & \lambda \ge 0
 \subsection*{$P_{24}$ 定义 1.2.17 对偶间隙}
 称原始问题的最优值与对偶问题的最优值之差为原始问题的对偶间隙。
 
+\subsection*{$P_{24}$ 定理 1.2.18 弱对偶定理}
+原始问题(1.2.10)$\to$(1.2.12)的对偶间隙永远取非负，即原始问题的最优值$p^*$和对偶问题(1.2.40)$\to$(1.2.41)的最优值$d^*$有如下关系：
+\begin{align*}
+p^* &= \inf\{f_0(x)\} \\
+& \ge \sup\{g(\lambda, \nu)\} \\
+\tag{1.2.43}
+& = d^*
+\end{align*}
+
+上述定理有如下推论：
+\subsection*{$P_{24}$ 推论 1.2.19}
+设$\tilde{x}$和$(\tilde{\lambda}, \tilde{\nu})$分别是原始问题(1.2.10)$\to$(1.2.12)和对偶问题(1.2.40)$\to$(1.2.41)的可行解。若$f_0(\tilde{x}) = g(\tilde{\lambda}, \tilde{\nu})$，则$\tilde{x}$和$(\tilde{\lambda}, \tilde{\nu})$分别是原始问题和对偶问题的整体解。
+
 \subsection*{$P_{24}$ 定理 1.2.20 Slater条件}
 强对偶定理讨论的是对偶间隙为零的情况，我们需要“约束规格”来保证对偶间隙为零。对于凸规划问题(1.2.10)$\to$(1.2.12)，最简单的约束规格是满足Slater条件：如果存在可行点$x$，使得:
 $$
@@ -203,7 +216,7 @@ s.t. \qquad & \forall i \in \{i| y_i = 1\}: (\omega \cdot x_i) + b \ge 1 \\
 或者：
 \begin{align*}
 \tag{2.2.8}
-\min_{\omega, b} \qquad & \frac{1}{2}{\| \omega \|} \\
+\min_{\omega, b} \qquad & \frac{1}{2}{\| \omega \|}^2 \\
 \tag{2.2.9}
 s.t. \qquad & y_i((\omega \cdot x_i) + b) \ge 1, \qquad i=1, \ldots, l \\
 \end{align*}
@@ -278,6 +291,10 @@ y &= (y_1, \ldots, y_l)^T
 \end{align*}
 因为存在可逆矩阵$Q = (y_1x_1, \ldots, y_lx_l)$使得$H = Q^T Q$，所以$H$是半正定矩阵。
 由于该问题满足Slater条件，由定理1.2.23知，对于问题的解$\alpha^*$来说，存在Lagrange乘子向量$\tilde{b^*}$和$s^*$满足：
+$$ 
+\mathbf{L}(\alpha, s, \tilde{b}) = W(\alpha) + s (-\alpha) + \tilde{b} (\alpha^T y)
+$$
+由KKT条件可以得出：
 $$
 {\alpha^*}^T y = 0, \qquad \alpha^* \ge 0 
 \eqno{(2.2.47)} $$
@@ -291,7 +308,21 @@ H \alpha^* - e + \tilde{b^*} y - s^* = 0
 $$
 H \alpha^* - e + \tilde{b^*} y \ge 0
 \eqno{(2.2.50)} $$
-令$\omega^* = \sum_{i=1}^{l} \alpha_i^* y_i x_i$，则式(2.2.50)等价于：
+令$\omega^* = \sum\limits_{i=1}^{l} \alpha_i^* y_i x_i$，则式(2.2.50)等价于：
+$$
+y_i((\omega^* \cdot x_i) + \tilde{b^*}) \ge 1, \qquad i=1, \ldots, l \\
+\eqno{(2.2.51)} $$
+这表明$(\omega^*, \tilde{b^*})$是原始问题(2.2.8)$\to$(2.2.9)的可行解。
+更进一步，由(2.2.33)和(2.2.47)$\to$(2.2.49)可得：
+\begin{align*}
+\frac{1}{2} {\| \omega^* \|}^2 &= \frac{1}{2} {\alpha^*}^T H \alpha^* \\
+&= \frac{1}{2} {\alpha^*}^T H \alpha^* - {\alpha^*}^T (H \alpha^* + \tilde{b^*} y - e - s^*) \\
+&= -\frac{1}{2} {\alpha^*}^T H \alpha^* - \tilde{b^*}{\alpha^*}^T y + e^T \alpha^* + {s^*}^T \alpha^* \\
+&= -\frac{1}{2} {\alpha^*}^T H \alpha^* - \tilde{b^*} \mathbf{0} + e^T \alpha^* + \mathbf{0} \\
+&= -\frac{1}{2} {\alpha^*}^T H \alpha^* + e^T \alpha^*
+\tag{2.2.52}
+\end{align*}
+因此，原始问题(2.2.8)$\to$(2.2.9)在$(\omega^*,\tilde{b^*})$点的目标函数值和对偶问题(2.2.40)$\to$(2.2.42)的最优值相同。
 
 \subsection*{$P_{63}$ 定理 2.2.7 }
 考虑线性可分问题，则对偶问题(2.2.27)$\to$(2.2.29)必有解$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$。
@@ -343,6 +374,5 @@ f(x) = sgn(g(x))
 $$
 g(x) = (\omega* \cdot x) + b^* = \sum_{i=1}^l y_i \alpha_i^* (x_i \cdot x) + b^*
 \eqno{(2.2.62)} $$
-
 
 \end{document}

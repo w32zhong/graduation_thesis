@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.4)  20 MAR 2013 20:48
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (TeX Live 2009/Debian) (format=xelatex 2013.3.4)  21 MAR 2013 23:32
 entering extended mode
  %&-line parsing enabled.
 **note.tex
@@ -306,7 +306,7 @@ LaTeX Font Info:    Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  3482 strings out of 495724
  62166 string characters out of 1189347
- 159670 words of memory out of 3000000
+ 158670 words of memory out of 3000000
  6583 multiletter control sequences out of 15000+50000
  7664 words of font info for 48 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
