@@ -142,6 +142,7 @@ int main()
 
 #endif
 
+#if 0
 int main()
 {
 	SOCKET server_sock;
@@ -190,6 +191,7 @@ int main()
 	WIN_CLOSE;
 	return 0;
 }
+#endif
 
 #if 0
 void main()
@@ -217,20 +219,20 @@ void main()
 struct req {
 	struct req *prev;
 	unsigned int time;
-	char user[32];
-	char action[32];
-	char answer[32];
+	char user[MAX_REQ_LEN/4];
+	char action[MAX_REQ_LEN/4];
+	char content[MAX_REQ_LEN/4];
 };
 
 struct req* new_req(char *time, char *user, 
-		char *action, char *answer)
+		char *action, char *content)
 {
 	struct req *ret = (struct req*)malloc(sizeof(struct req));
 	ret->prev = NULL;
 	sscanf(time, "%u", &ret->time);
 	strcpy(ret->user, user);
 	strcpy(ret->action, action);
-	strcpy(ret->answer, answer);
+	strcpy(ret->content, content);
 
 	return ret;
 }
@@ -242,7 +244,7 @@ void print_reqs(struct req *list_tail)
 
 	do {
 		printf("%d, %s, %s, %s \n", list_tail->time, list_tail->user, 
-				list_tail->action, list_tail->answer);
+				list_tail->action, list_tail->content);
 		list_tail = list_tail->prev;
 	} while (list_tail != NULL);
 }
@@ -257,85 +259,99 @@ struct req* user_prev_req(struct req *r)
 
 	while (r->prev) {
 		r = r->prev;
-		if (strcmp(r->user, tpl.user) == 0)
+		if (strcmp(r->user, tpl.user) == 0 &&
+			strcmp(r->action, tpl.action))
 			return r;
 	}
 
 	return NULL;
 }
 
+typedef int permit_fun(struct req*, struct req*);
 /* r0 is older than r1 */
-#define COUNT_PERMIT_IF \
-	if  \
-		strcpy(alert_reason, "request too frequently"); \
-		break_flag = 1; \
-	else if (r1->time - r0-time > 60000) \
-#define COUNT_PERMIT_MAX 4
 
-#define ALERT0_NAME       "continuously similar comments"
-#define ALERT0_COUNT_IF  (strcmp(r0->action, r1->action) == 0 && strcmp(r0->answer, r1->answer) == 0)
+#define ALERT0_REASON    "too frequent"
+#define ALERT0_COUNT_IF  (new_req->time - next_req->time < 20)
 #define ALERT0_COUNT_MAX  4 
 
-typedef int permit_fun(struct req*, struct req*, struct req*);
+#define ALERT1_REASON    "continuously similar"
+#define ALERT1_COUNT_IF  (strcmp(new_req->content, next_req->content) == 0)
+#define ALERT1_COUNT_MAX  2 
+
+int alert0_count_if(struct req* next_req, struct req* new_req)
+{
+	return ALERT0_COUNT_IF;
+}
+
+int alert1_count_if(struct req* next_req, struct req* new_req)
+{
+	return ALERT1_COUNT_IF;
+}
 
 int check_legal(struct req *list_tail, 
-		permit_fun *alert_count_if, 
-		char *alert_name,
-		int alert_count_max,
+		const char  *alert_reason,
+		permit_fun  *alert_count_if, 
+		int          alert_count_max
 		)
 {
-	struct req *r0, *r1 = list_tail;
+	struct req *next_req = list_tail, *new_req = list_tail;
 	int count = 0;
 	int break_flag = 0;
 	char alert[64];
 
-	while (r1) {
+	while (next_req) {
 		count++;
-		r0 = user_prev_req(r1);
-		if (r0 == NULL || !(*permit)(r0, r1))
+		next_req = user_prev_req(next_req);
+		if (next_req == NULL || !(*alert_count_if)(next_req, new_req))
 			break;
-
-		r1 = r0;
 	}
 
-	if (count >= permit_max)
+	if (count >= alert_count_max) {
+		printf("%s,\"%s %ss\" \n", new_req->user, alert_reason,
+				new_req->action);
 		return 0;
-	else
+	} else
 		return 1;
 }
 
-#if 0
+//#if 0
 int main()
 {
 	int i = 0;
 	char str_tmp_time[64];
 	char str_tmp_user[64];
 	char str_tmp_action[64];
-	char str_tmp_answer[64];
+	char str_tmp_content[64];
 	struct req *tmp, *list_tail = NULL;
 
 	while (i < 15) {
 		sprintf(str_tmp_time, "%d", i*2);
 		sprintf(str_tmp_user, "user%d", i%4);
-		sprintf(str_tmp_action, "action%d", 457);
-		sprintf(str_tmp_answer, "answer%d", i);
+		switch(i % 3) {
+		case 0:
+			sprintf(str_tmp_action, "comment", 457);
+			break;
+		case 1:
+			sprintf(str_tmp_action, "question", 457);
+			break;
+		default:
+			sprintf(str_tmp_action, "answer", 457);
+		}
+		sprintf(str_tmp_content, "content%d", 123);
 		
 		tmp = new_req(str_tmp_time, str_tmp_user,
-				str_tmp_action, str_tmp_answer);
+				str_tmp_action, str_tmp_content);
 		tmp->prev = list_tail;
 		list_tail = tmp;
 		 
 		i++;
 	}
 
-	if (check_legal(list_tail))
-		printf("PASS \n");
-	else
-		printf("STOP \n");
-
-	printf("\033[2J");
-	printf("\33[0;0H");
+	//printf("\033[2J");
+	//printf("\33[0;0H");
+	check_legal(list_tail, ALERT0_REASON, &alert0_count_if, ALERT0_COUNT_MAX);
+	check_legal(list_tail, ALERT1_REASON, &alert1_count_if, ALERT1_COUNT_MAX);
 	print_reqs(list_tail);
-	printf("\33[0;0H");
+	//printf("\33[0;0H");
 }
-#endif
+//#endif
