@@ -322,7 +322,7 @@ y_i((\omega^* \cdot x_i) + \tilde{b^*}) \ge 1, \qquad i=1, \ldots, l \\
 &= -\frac{1}{2} {\alpha^*}^T H \alpha^* + e^T \alpha^*
 \tag{2.2.52}
 \end{align*}
-因此，原始问题(2.2.8)$\to$(2.2.9)在$(\omega^*,\tilde{b^*})$点的目标函数值和对偶问题(2.2.40)$\to$(2.2.42)的最优值相同。
+因此，原始问题(2.2.8)$\to$(2.2.9)在$(\omega^*,\tilde{b^*})$点的目标函数值和对偶问题(2.2.40)$\to$(2.2.42)的最优值相同，根据推论1.2.19，$(\omega^*,\tilde{b^*})$为原始问题(2.2.8)$\to$(2.2.9)的最优解。对于解的唯一性和非零性，可以由最大间隔法的特性推到得出。
 
 \subsection*{$P_{63}$ 定理 2.2.7 }
 考虑线性可分问题，则对偶问题(2.2.27)$\to$(2.2.29)必有解$\alpha^* = (\alpha_1^*, \ldots, \alpha_l^*)^T$。
@@ -345,6 +345,16 @@ b^* &= y_j - \sum_{i=1}^l \alpha^*_i y_i (x_i \cdot x_j)
 \tag{2.2.46}
 b^* &= - \frac{\left( \omega^* \cdot \sum\limits_{i=1}^{l} \alpha_i^* x_i \right)}{2 \sum\limits_{y_i=1}\alpha_i^*}
 \end{align*}
+
+对于表达式(2.2.47)和(2.2.46)的证明：因为$\alpha^* \ne 0$，所以存在下标j，使得$\alpha^*_j > 0$。由条件(2.2.47)$\to$(2.2.49)知，若$\alpha^*_j > 0$则$s^*_j = 0$，因此知道$H \alpha^* - e + \tilde{b^*}y$的第j个分量等于0.由此等式解出$\tilde{b^*}$，便得式(2.2.44)。另外，由式(2.2.47)中的第二式和式(2.2.48)可知，对$i = 1, \ldots, l.$有$s^*_i \alpha^*_i = 0.$而由式(2.2.49)得：
+$$
+s^*_i = y_i (( \omega^* \cdot x_i) + \tilde{b^*}) - 1, \qquad i = 1, \ldots l.
+\eqno{(2.2.53)} $$
+所以
+$$
+s^*_i \alpha_i^* = \alpha_i^* (y_i (( \omega^* \cdot x_i) + \tilde{b^*}) - 1) = 0, \qquad i = 1, \ldots l.
+\eqno{(2.2.54)} $$
+进一步
 
 \subsection*{$P_{65}$ 算法 2.2.10 线性可分支持向量分类机}
 \subsubsection*{(1)}
